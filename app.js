@@ -1,16 +1,11 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(request, response){
-    response.send('Hello World');
-});
+app.use(express.static('public'));
 
 app.get('/blocks', function(request, response){
-    // var blocks = ['Fixed', 'Movable', 'Rotating'];
-    // response.json(blocks);
-    response.redirect(301, '/parts');
+    var blocks = ['Fixed', 'Movable', 'Rotating'];
+    response.json(blocks);
 });
 
-app.listen(process.env.PORT, function(){
-    console.log('Listening on port ' + process.env.PORT+'');
-});
+app.listen(process.env.PORT);
