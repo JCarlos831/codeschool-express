@@ -2,13 +2,13 @@
 
 $(function(){
   
-  $.get('/blocks', appendToList);
+  $.get('/cities', appendToList);
   
-  function appendToList(blocks) {
+  function appendToList(cities) {
       var list = [];
-      for (var i in blocks) {
-          list.push($('<li>', { text: blocks[i] }));
+      for (var i in cities) {
+          list.push($('<li>', { text: cities[i] }));
       }
-      $('.block-list').append(list);
+      $('.city-list').append(list);
   }
 });
