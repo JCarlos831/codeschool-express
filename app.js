@@ -3,9 +3,9 @@ var app = express();
 
 app.use(express.static('public'));
 
-app.get('/blocks', function(request, response){
-    var blocks = ['Fixed', 'Movable', 'Rotating'];
-    response.json(blocks);
+app.get('/cities', function(request, response){
+    var cities = ['Providence', 'Boston', 'Austin', 'Miami', 'Detroit'];
+    response.json(cities);
 });
 
 app.listen(process.env.PORT);
