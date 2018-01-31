@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var currentDate = new Date();
 
+var bodyParser = require('body-parser');
+var parseUrlencoded = bodyParser.urlencoded({extended: false});
 
 var cities = {
     'Providence': 'Rhode Island',
@@ -10,6 +12,24 @@ var cities = {
     'Miami': 'Florida',
     'Detroit': 'Michigan'
 };
+
+app.delete('/cities/:name', function(request, response) {
+   delete cities[request.cityName];
+   response.send(200).json('OK');
+});
+
+app.post('/cities', parseUrlencoded, function(request, response) {
+    console.log(request.body.city);
+    console.log(request.body.state);
+    if(request.body.city.length > 4 && request.body.state.length > 2){
+    var newCity = request.body;
+    cities[newCity.city] = newCity.state;
+    
+    response.status(201).json(newCity.city);
+    } else {
+    response.status(404).json("Invalid Entry");
+    }
+});
 
 app.use(express.static('public'));
 
