@@ -1,0 +1,24 @@
+{
+  "name": "codeschool-express",
+  "version": "1.0.0",
+  "description": "Express Practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JCarlos831/codeschool-express.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "javascript"
+  ],
+  "author": "Juan Montoya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JCarlos831/codeschool-express/issues"
+  },
+  "homepage": "https://github.com/JCarlos831/codeschool-express#readme"
+}
